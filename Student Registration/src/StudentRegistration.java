@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class StudentRegistration {
     public static void main(String[] args) {
         Student student = new Student();
+        Subjects subject = new Subjects();
         Scanner sc = new Scanner(System.in);
         int opc;
         System.out.println("Sistema de gestion de Estudiantes");
@@ -25,6 +26,7 @@ public class StudentRegistration {
                     break;
                 case 3:
                     System.out.println("---//Lista de Materias//---");
+                    System.out.println(subject.list());
                     break;
                 case 4:
                     System.out.println("---//Asignación de estudiantes//---");
