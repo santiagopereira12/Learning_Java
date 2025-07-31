@@ -18,6 +18,10 @@ public class StudentRegistration {
                     break;
                 case 2:
                     System.out.println("---//Registro de Estudinates//---");
+                    sc.nextLine();
+                    System.out.print("Digite el Nombre y apellido del estudiante: ");
+                    String name = sc.nextLine();
+                    student.register(name);
                     break;
                 case 3:
                     System.out.println("---//Lista de Materias//---");
