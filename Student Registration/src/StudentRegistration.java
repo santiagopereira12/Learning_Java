@@ -41,6 +41,7 @@ public class StudentRegistration {
                     break;
                 case 5:
                     System.out.println("---//Listado de Estudiantes asignados//---");
+                    System.out.println("Los estudiantes registrados son: " + "Las materias asignadas son: ");
                     break;
                 case 6:
                     System.out.println("---//Saliendo del sistemas//---");
