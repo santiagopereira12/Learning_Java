@@ -1,10 +1,27 @@
+import java.util.ArrayList;
+
 public class Student {
-    public String list(){
-        String lista = "Esta es la lista de estudiantes";
-        return lista;
+    private ArrayList<String> estudiantes = new ArrayList<>();
+
+    public Student(){
+        estudiantes.add("Santiago Pereira");
+        estudiantes.add("Carlos Cuesta");
+        estudiantes.add("Cristian Prieto");
     }
 
-    public void register(String name){
-        System.out.println("El nombre registrado es: " +name);
+    public String list(){
+        if (estudiantes.isEmpty()){
+            return "No hay estudiantes agregados.";
+        }
+        StringBuilder lista = new StringBuilder("Lista de Estudiantes:\n");
+        for (int i = 0; i< estudiantes.size(); i++){
+            lista.append((i+1)).append(". ").append(estudiantes.get(i)).append("\n");
+        }
+        return lista.toString();
+    }
+
+    public String register(String name){
+        estudiantes.add(name);
+        return "El estudiante "+name+", fue registrado correctamente.";
     }
 }

@@ -15,14 +15,14 @@ public class StudentRegistration {
             switch (opc) {
                 case 1:
                     System.out.println("---//Lista de Esutiantes//---");
-                    System.out.println(student.list()+"\n");
+                    System.out.println(student.list());
                     break;
                 case 2:
                     System.out.println("---//Registro de Estudinates//---");
                     sc.nextLine();
                     System.out.print("Digite el Nombre y apellido del estudiante: ");
                     String name = sc.nextLine();
-                    student.register(name);
+                    System.out.println(student.register(name));
                     break;
                 case 3:
                     System.out.println("---//Lista de Materias//---");
@@ -44,7 +44,7 @@ public class StudentRegistration {
                     System.out.println("Los estudiantes registrados son: " + "Las materias asignadas son: ");
                     break;
                 case 6:
-                    System.out.println("---//Saliendo del sistemas//---");
+                    System.out.println("---//Saliendo del sistemas//---\n");
                     break;
                 default:
                     System.out.println("Opción no valida.");
