@@ -4,6 +4,7 @@ public class StudentRegistration {
     public static void main(String[] args) {
         Student student = new Student();
         Subjects subject = new Subjects();
+        Assignment assignment = new Assignment();
         Scanner sc = new Scanner(System.in);
         int opc;
         System.out.println("Sistema de gestion de Estudiantes");
@@ -37,11 +38,11 @@ public class StudentRegistration {
                     System.out.println(student.list());
                     System.out.print("Digite el nombre del estudiante a registrar: ");
                     String studentRegister = sc.nextLine();
-                    System.out.println("Nombre del estudiante registrado: "+studentRegister+ ", asignado a: "+assign);
+                    System.out.println(assignment.asignarEstudiante(studentRegister, assign) +"\n");
                     break;
                 case 5:
                     System.out.println("---//Listado de Estudiantes asignados//---");
-                    System.out.println("Los estudiantes registrados son: " + "Las materias asignadas son: ");
+                    System.out.println(assignment.listarAsignacion());
                     break;
                 case 6:
                     System.out.println("---//Saliendo del sistemas//---\n");
