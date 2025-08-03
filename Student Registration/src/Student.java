@@ -7,6 +7,8 @@ public class Student {
         estudiantes.add("Santiago Pereira");
         estudiantes.add("Carlos Cuesta");
         estudiantes.add("Cristian Prieto");
+        estudiantes.add("Sebastian Sanchez");
+        estudiantes.add("Juan Ariza");
     }
 
     public String list(){
