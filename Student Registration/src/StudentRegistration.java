@@ -19,7 +19,7 @@ public class StudentRegistration {
                     System.out.println(student.list());
                     break;
                 case 2:
-                    System.out.println("---//Registro de Estudinates//---");
+                    System.out.println("---//Registro de Estudiantes//---");
                     sc.nextLine();
                     System.out.print("Digite el Nombre y apellido del estudiante: ");
                     String name = sc.nextLine();
@@ -32,12 +32,23 @@ public class StudentRegistration {
                 case 4:
                     System.out.println("---//Asignación de estudiantes//---");
                     sc.nextLine();
+
                     System.out.println(subject.list());
                     System.out.print("Digite la materia al que quiere asignar un estudiante: ");
                     String assign = sc.nextLine();
+                    if (!subject.existsSubject(assign)){
+                        System.out.println("La materia no esta registrada");
+                        break;
+                    }
+
                     System.out.println(student.list());
                     System.out.print("Digite el nombre del estudiante a registrar: ");
                     String studentRegister = sc.nextLine();
+                    if (!student.existsStudent(studentRegister)){
+                        System.out.println("El estudiante no se encuentra registrado.");
+                        break;
+                    }
+
                     System.out.println(assignment.asignarEstudiante(studentRegister, assign) +"\n");
                     break;
                 case 5:

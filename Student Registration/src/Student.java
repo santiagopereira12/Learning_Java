@@ -26,4 +26,8 @@ public class Student {
         estudiantes.add(name);
         return "El estudiante "+name+", fue registrado correctamente.";
     }
+
+    public boolean existsStudent(String nombre){
+        return estudiantes.contains(nombre);
+    }
 }

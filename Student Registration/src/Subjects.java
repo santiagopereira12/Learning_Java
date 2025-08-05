@@ -21,4 +21,8 @@ public class Subjects {
         }
         return lista.toString();
     }
+
+    public boolean existsSubject(String materia){
+        return materias.contains(materia);
+    }
 }
