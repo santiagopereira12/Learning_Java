@@ -53,6 +53,10 @@ public class StudentRegistration {
                     break;
                 case 5:
                     System.out.println("---//Listado de Estudiantes asignados//---");
+                    if (assignment.listarAsignacion().equals("No hay Asignaciones disponibles.")){
+                        assignment.asignarRandom(student.getEstudiantes(),subject.getMaterias());
+                    }
+
                     System.out.println(assignment.listarAsignacion());
                     break;
                 case 6:

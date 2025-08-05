@@ -30,4 +30,8 @@ public class Student {
     public boolean existsStudent(String nombre){
         return estudiantes.contains(nombre);
     }
+
+    public ArrayList<String> getEstudiantes(){
+        return estudiantes;
+    }
 }

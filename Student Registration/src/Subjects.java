@@ -25,4 +25,8 @@ public class Subjects {
     public boolean existsSubject(String materia){
         return materias.contains(materia);
     }
+
+    public ArrayList<String> getMaterias(){
+        return materias;
+    }
 }

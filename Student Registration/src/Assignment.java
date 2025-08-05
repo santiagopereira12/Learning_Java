@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Assignment {
     private ArrayList<String> asignacion  = new ArrayList<>();
+    private Random rand = new Random();
 
     public String asignarEstudiante(String nombreEstudiante, String nombreMateria){
         String registro = nombreEstudiante +" -> "+ nombreMateria;
@@ -19,5 +21,18 @@ public class Assignment {
             sb.append((i+1)).append(". ").append(asignacion.get(i)).append("\n");
         }
         return sb.toString();
+    }
+
+    public String asignarRandom(ArrayList<String> estudiantes, ArrayList<String> materias){
+        if (estudiantes.isEmpty() || materias.isEmpty()){
+            return "No hay estudiantes asignados a materias";
+        }
+
+        for (String estudiante : estudiantes){
+            int index = rand.nextInt(materias.size());
+            String materiaAsignada = materias.get(index);
+            asignacion.add(estudiante +" -> "+materiaAsignada);
+        }
+        return "Asignación.";
     }
 }
