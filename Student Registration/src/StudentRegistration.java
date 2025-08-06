@@ -36,7 +36,8 @@ public class StudentRegistration {
                     System.out.println(subject.list());
                     System.out.print("Digite la materia al que quiere asignar un estudiante: ");
                     String assign = sc.nextLine();
-                    if (!subject.existsSubject(assign)){
+                    String materiaEncontrada = subject.buscarMaterias(assign);
+                    if (materiaEncontrada == null){
                         System.out.println("La materia no esta registrada");
                         break;
                     }
@@ -49,7 +50,7 @@ public class StudentRegistration {
                         break;
                     }
 
-                    System.out.println(assignment.asignarEstudiante(studentRegister, assign) +"\n");
+                    System.out.println(assignment.asignarEstudiante(studentRegister, materiaEncontrada) +"\n");
                     break;
                 case 5:
                     System.out.println("---//Listado de Estudiantes asignados//---");
