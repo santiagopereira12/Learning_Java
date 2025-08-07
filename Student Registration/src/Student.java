@@ -1,3 +1,4 @@
+import java.text.Normalizer;
 import java.util.ArrayList;
 
 public class Student {
@@ -33,5 +34,26 @@ public class Student {
 
     public ArrayList<String> getEstudiantes(){
         return estudiantes;
+    }
+
+    public String buscarEstudiante(String entrada){
+        try{
+            int index = Integer.parseInt(entrada);
+            if (index >= 1 && index <= estudiantes.size()){
+                return estudiantes.get(index - 1);
+            }
+        }catch (NumberFormatException e){}
+
+        for (String estudiante : estudiantes){
+            if (normalize(estudiante).equalsIgnoreCase(normalize(entrada.trim()))){
+                return estudiante;
+            }
+        }
+
+        return null;
+    }
+
+    private String normalize(String texto){
+        return java.text.Normalizer.normalize(texto.trim(), Normalizer.Form.NFD).replaceAll("\\p{InCOMBINING_DIACRITICAL_MARKS}+", "").toLowerCase();
     }
 }

@@ -45,12 +45,13 @@ public class StudentRegistration {
                     System.out.println(student.list());
                     System.out.print("Digite el nombre del estudiante a registrar: ");
                     String studentRegister = sc.nextLine();
-                    if (!student.existsStudent(studentRegister)){
+                    String estudianteEncontrado = student.buscarEstudiante(studentRegister);
+                    if (estudianteEncontrado == null){
                         System.out.println("El estudiante no se encuentra registrado.");
                         break;
                     }
 
-                    System.out.println(assignment.asignarEstudiante(studentRegister, materiaEncontrada) +"\n");
+                    System.out.println(assignment.asignarEstudiante(estudianteEncontrado, materiaEncontrada) +"\n");
                     break;
                 case 5:
                     System.out.println("---//Listado de Estudiantes asignados//---");
