@@ -33,22 +33,28 @@ public class StudentRegistration {
                     System.out.println("---//Asignación de estudiantes//---");
                     sc.nextLine();
 
-                    System.out.println(subject.list());
-                    System.out.print("Digite la materia al que quiere asignar un estudiante: ");
-                    String assign = sc.nextLine();
-                    String materiaEncontrada = subject.buscarMaterias(assign);
-                    if (materiaEncontrada == null){
-                        System.out.println("La materia no esta registrada");
-                        break;
+                    String materiaEncontrada;
+                    while (true) {
+                        System.out.println(subject.list());
+                        System.out.print("Digite la materia al que quiere asignar un estudiante: ");
+                        String assign = sc.nextLine();
+                        materiaEncontrada = subject.buscarMaterias(assign);
+                        if (materiaEncontrada != null) {
+                            break;
+                        }
+                        System.out.println("La materia no esta registrada\n");
                     }
 
-                    System.out.println(student.list());
-                    System.out.print("Digite el nombre del estudiante a registrar: ");
-                    String studentRegister = sc.nextLine();
-                    String estudianteEncontrado = student.buscarEstudiante(studentRegister);
-                    if (estudianteEncontrado == null){
+                    String estudianteEncontrado;
+                    while (true) {
+                        System.out.println(student.list());
+                        System.out.print("Digite el nombre del estudiante a registrar: ");
+                        String studentRegister = sc.nextLine();
+                        estudianteEncontrado = student.buscarEstudiante(studentRegister);
+                        if (estudianteEncontrado != null) {
+                            break;
+                        }
                         System.out.println("El estudiante no se encuentra registrado.");
-                        break;
                     }
 
                     System.out.println(assignment.asignarEstudiante(estudianteEncontrado, materiaEncontrada) +"\n");
