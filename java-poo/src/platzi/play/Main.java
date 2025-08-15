@@ -2,6 +2,8 @@ package platzi.play;
 import platzi.play.contenido.Pelicula;
 import platzi.play.plataforma.Usuario;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Main {
@@ -10,15 +12,17 @@ public class Main {
 
         Pelicula pelicula = new Pelicula();
         pelicula.titulo = "Narnia";
-        pelicula.anioEstreno = 2002;
+        pelicula.fechaEstreno = LocalDate.of(2007,10,6);
         pelicula.genero = "Aventura";
         pelicula.calificar(4.5);
 
         Usuario usuario = new Usuario();
         usuario.nombre = "Santiago";
+        usuario.fechaRegistro = LocalDateTime.of(2025,8,11,11,42,50);
 
         //System.out.println(pelicula.obtenerFichaTecnica());
         usuario.ver(pelicula);
+        System.out.println(usuario.fechaRegistro);
 
         /*
         System.out.println("¡Platzi Play!");
