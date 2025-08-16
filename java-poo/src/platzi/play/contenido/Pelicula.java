@@ -12,7 +12,7 @@ public class Pelicula {
     public boolean disponible;
 
     public void reproducir(){
-        System.out.println("Reproduciendo :" +titulo);
+        System.out.println("Reproduciendo : " +titulo);
     }
 
     public String obtenerFichaTecnica(){
