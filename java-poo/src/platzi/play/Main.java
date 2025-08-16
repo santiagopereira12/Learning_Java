@@ -5,11 +5,9 @@ import platzi.play.util.ScannerUtils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
         String nombre = ScannerUtils.capturarTexto("Nombre del contenido");
         String genero = ScannerUtils.capturarTexto("Genero del contenido");
