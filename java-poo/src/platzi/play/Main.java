@@ -17,18 +17,11 @@ public class Main {
         int duracion = ScannerUtils.capturarNumero("duración del contenido");
         double calificacion = ScannerUtils.capturarDecimal("calificacion del contenido");
 
-        Pelicula pelicula = new Pelicula();
-        pelicula.titulo = nombre;
-        pelicula.fechaEstreno = LocalDate.of(2007,10,6);
-        pelicula.genero = genero;
-        pelicula.calificar(calificacion);
-        pelicula.duracion = duracion;
+        Pelicula pelicula = new Pelicula(nombre, duracion,genero,calificacion);
 
         System.out.println(pelicula.obtenerFichaTecnica());
 
-        Usuario usuario = new Usuario();
-        usuario.nombre = "Santiago";
-        usuario.fechaRegistro = LocalDateTime.of(2025,8,11,11,42,50);
+        Usuario usuario = new Usuario("Santiago","santiago@prueba.com");
 
         System.out.println("\n/------------/USUARIO/-------------/");
         usuario.ver(pelicula);
