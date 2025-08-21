@@ -20,4 +20,28 @@ public class Usuario {
         System.out.println(nombre +" Esta viendo...");
         pelicula.reproducir();
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public LocalDateTime getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
