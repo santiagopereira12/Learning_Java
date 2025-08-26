@@ -30,10 +30,10 @@ public class Main {
 
             switch (opcion){
                 case AGREGAR -> {
-                    String nombre = ScannerUtils.capturarTexto("Nombre del contenido");
-                    String genero = ScannerUtils.capturarTexto("Genero del contenido");
-                    int duracion = ScannerUtils.capturarNumero("duración del contenido");
-                    double calificacion = ScannerUtils.capturarDecimal("calificacion del contenido");
+                    String nombre = ScannerUtils.capturarTexto("Nombre del contenido: ");
+                    String genero = ScannerUtils.capturarTexto("Genero del contenido: ");
+                    int duracion = ScannerUtils.capturarNumero("duración del contenido: ");
+                    double calificacion = ScannerUtils.capturarDecimal("calificacion del contenido: ");
 
                     plataforma.agregar(new Pelicula(nombre, duracion,genero,calificacion));
                 }
