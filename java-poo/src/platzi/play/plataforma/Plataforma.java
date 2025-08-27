@@ -30,7 +30,7 @@ public class Plataforma {
 
     public Pelicula buscarPorTitulo(String titulo){
         for (Pelicula pelicula: contenido){
-            if (pelicula.getTitulo().equalsIgnoreCase()){
+            if (pelicula.getTitulo().equalsIgnoreCase(titulo)){
                 return pelicula;
             }
         }
