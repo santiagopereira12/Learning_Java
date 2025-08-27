@@ -48,7 +48,15 @@ public class Main {
                     }
                 }
                 case ELIMINAR -> {
+                    String tituloEliminar = ScannerUtils.capturarTexto("titulo del contenico: ");
+                    Pelicula contenido = plataforma.buscarPorTitulo(tituloEliminar);
 
+                    if (contenido != null){
+                        plataforma.eliminar(contenido);
+                        System.out.println("Elemento eliminado: " +contenido);
+                    }else {
+                        System.out.println(tituloEliminar + ". No se encuentra en la plataforma");
+                    }
                 }
                 case SALIR -> System.exit(0);
             }
