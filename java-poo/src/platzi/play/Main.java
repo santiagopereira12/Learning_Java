@@ -26,7 +26,6 @@ public class Main {
                     4. Eliminar.
                     5. Salir.
                     """);
-            System.out.println("Opcion escogida: " +opcion);
 
             switch (opcion){
                 case AGREGAR -> {
@@ -39,7 +38,14 @@ public class Main {
                 }
                 case MOSTRAR_TODO -> plataforma.mostrarTitulo();
                 case BUSCAR_POR_TITULO -> {
+                    String nombreBuscado = ScannerUtils.capturarTexto("titulo del contenico: ");
+                    Pelicula pelicula = plataforma.buscarPorTitulo(nombreBuscado);
 
+                    if (pelicula != null){
+                        System.out.println(pelicula.obtenerFichaTecnica());
+                    }else {
+                        System.out.println(nombreBuscado + ". No se encuentra en la plataforma");
+                    }
                 }
                 case ELIMINAR -> {
 
@@ -47,29 +53,19 @@ public class Main {
                 case SALIR -> System.exit(0);
             }
         }
+    }
 
-        /*String nombre = ScannerUtils.capturarTexto("Nombre del contenido");
-        String genero = ScannerUtils.capturarTexto("Genero del contenido");
-        int duracion = ScannerUtils.capturarNumero("duración del contenido");
-        double calificacion = ScannerUtils.capturarDecimal("calificacion del contenido");
-
-        Pelicula pelicula = new Pelicula(nombre, duracion,genero,calificacion);
-        Pelicula pelicula1 = new Pelicula("Narnia",220,"Aventura");
-        System.out.println("\n/--------------//CONTENIDO//------------/");
-        plataforma.agregar(pelicula);
-        plataforma.agregar(pelicula1);
-        System.out.println("Numero de elementos en la plataforma: "+plataforma.getContenido().size());
-        plataforma.mostrarTitulo();
-
-        Usuario usuario = new Usuario("Santiago","santiago@prueba.com");
-
-        System.out.println("\n/------------/USUARIO/-------------/");
-        usuario.ver(pelicula);
-        System.out.println(usuario.fechaRegistro);
-
-        System.out.println("\n/---------//ELIMINAR//---------/");
-        plataforma.eliminar(pelicula1);
-        plataforma.mostrarTitulo();*/
-
+    private static void cargarPelicula(Plataforma plataforma){
+        plataforma.agregar(new Pelicula("Shrek",90,"Animada"));
+        plataforma.agregar(new Pelicula("El Rey León", 88, "Animada"));
+        plataforma.agregar(new Pelicula("Jurassic Park", 127, "Ciencia Ficción"));
+        plataforma.agregar(new Pelicula("Titanic", 195, "Romance"));
+        plataforma.agregar(new Pelicula("Matrix", 136, "Acción"));
+        plataforma.agregar(new Pelicula("Gladiador", 155, "Histórica"));
+        plataforma.agregar(new Pelicula("Coco", 105, "Animada"));
+        plataforma.agregar(new Pelicula("Avengers: Endgame", 181, "Superhéroes"));
+        plataforma.agregar(new Pelicula("Avatar", 162, "Ciencia Ficción"));
+        plataforma.agregar(new Pelicula("Interestelar", 169, "Ciencia Ficción"));
+        plataforma.agregar(new Pelicula("Frozen", 102, "Animada"));
     }
 }
