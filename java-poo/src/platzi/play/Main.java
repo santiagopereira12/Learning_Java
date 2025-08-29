@@ -4,14 +4,18 @@ import platzi.play.plataforma.Plataforma;
 import platzi.play.plataforma.Usuario;
 import platzi.play.util.ScannerUtils;
 
+import java.util.List;
+
 public class Main {
     public static final String NOMBRE_PLATAFORMA = "PLATZI PLAY";
     public static final String VERSION = "1.0.0";
-    public static final int SALIR = 5;
     public static final int AGREGAR = 1;
     public static final int MOSTRAR_TODO = 2;
     public static final int BUSCAR_POR_TITULO = 3;
-    public static final int ELIMINAR = 4;
+    public static final int BUSCAR_POR_GENERO = 4;
+    public static final int ELIMINAR = 8;
+    public static final int SALIR = 9;
+
 
     public static void main(String[] args) {
         Plataforma plataforma = new Plataforma(NOMBRE_PLATAFORMA);
@@ -23,8 +27,9 @@ public class Main {
                     1. Agregar.
                     2. Mostrar Todo.
                     3. Buscar por titulo.
-                    4. Eliminar.
-                    5. Salir.
+                    4. Buscar por genero.
+                    8. Eliminar.
+                    9. Salir.
                     """);
 
             switch (opcion){
@@ -46,6 +51,12 @@ public class Main {
                     }else {
                         System.out.println(nombreBuscado + ". No se encuentra en la plataforma");
                     }
+                }
+                case BUSCAR_POR_GENERO -> {
+                    String generoPelicula = ScannerUtils.capturarTexto("Digite el genero del conternido: ");
+                    List<Pelicula> contenidoPorGenero = plataforma.buscarPorGenero(generoPelicula);
+                    System.out.println(contenidoPorGenero.size() + " encontrados para el genero " +generoPelicula);
+                    contenidoPorGenero.forEach(contenido -> System.out.println(contenido.obtenerFichaTecnica()));
                 }
                 case ELIMINAR -> {
                     String tituloEliminar = ScannerUtils.capturarTexto("titulo del contenico: ");
