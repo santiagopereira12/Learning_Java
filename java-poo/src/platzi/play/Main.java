@@ -63,7 +63,7 @@ public class Main {
                     }
                 }
                 case BUSCAR_POR_GENERO -> {
-                    Genero generoPelicula = ScannerUtils.capturarGenero("Genero a Buscar: ");
+                    Genero generoPelicula = ScannerUtils.capturarGenero("Buscar por Genero: ");
                     List<Pelicula> contenidoPorGenero = plataforma.buscarPorGenero(generoPelicula);
                     System.out.println(contenidoPorGenero.size() + " encontrados para el genero " +generoPelicula);
                     contenidoPorGenero.forEach(contenido -> System.out.println(contenido.obtenerFichaTecnica() +"\n"));
