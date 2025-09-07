@@ -33,7 +33,7 @@ public class Main {
 
         cargarPelicula(plataforma);
 
-        System.out.println("Más de " +plataforma.getDuracionTotal() +" Minutos de contenido.txt.\n");
+        System.out.println("Más de " +plataforma.getDuracionTotal() +" Minutos de contenido.\n");
 
         while (true){
             int opcion = ScannerUtils.capturarNumero("""
@@ -50,10 +50,10 @@ public class Main {
 
             switch (opcion){
                 case AGREGAR -> {
-                    String nombre = ScannerUtils.capturarTexto("Nombre del contenido.txt: ");
-                    Genero genero = ScannerUtils.capturarGenero("Genero del contenido.txt");
-                    int duracion = ScannerUtils.capturarNumero("duración del contenido.txt: ");
-                    double calificacion = ScannerUtils.capturarDecimal("calificacion del contenido.txt: ");
+                    String nombre = ScannerUtils.capturarTexto("Nombre del contenido");
+                    Genero genero = ScannerUtils.capturarGenero("Genero del contenido");
+                    int duracion = ScannerUtils.capturarNumero("duración del contenido");
+                    double calificacion = ScannerUtils.capturarDecimal("calificacion del contenido");
 
                     try {
                         plataforma.agregar(new Pelicula(nombre, duracion,genero,calificacion));
