@@ -1,11 +1,9 @@
 package platzi.play;
 
-import platzi.play.contenido.Pelicula;
-
 public class MainStackHeap {
     public static void main(String[] args) {
-        /*Pelicula reyLeon = new Pelicula("Rey Leon",120,"Animada");
-        Pelicula harryPotter = new Pelicula("Harry Potter", 200, "Fantasia");
+        /*Contenido reyLeon = new Contenido("Rey Leon",120,"Animada");
+        Contenido harryPotter = new Contenido("Harry Potter", 200, "Fantasia");
 
         reyLeon = harryPotter;
         reyLeon.titulo = "El Hobbit";
