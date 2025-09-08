@@ -6,9 +6,15 @@ public class Documental  extends Contenido{
         super(titulo, duracion, genero);
     }
 
+
     public Documental(String titulo, int duracion, Genero genero, double calificacion, String narrador) {
         super(titulo, duracion, genero, calificacion);
         this.narrador = narrador;
+    }
+
+    @Override
+    public void reproducir() {
+        System.out.println("Se esta reproduciendo el documental " +getTitulo()+ ", narrado por " +getNarrador());
     }
 
     public String getNarrador() {
