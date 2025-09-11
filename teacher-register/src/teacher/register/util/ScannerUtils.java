@@ -1,0 +1,12 @@
+package teacher.register.util;
+
+import java.util.Scanner;
+
+public class ScannerUtils {
+    public static final Scanner SCANNER = new Scanner(System.in);
+
+    public static String capturarTexto(String mensaje){
+        System.out.println(mensaje +":" );
+        return SCANNER.nextLine();
+    }
+}
