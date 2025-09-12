@@ -9,4 +9,9 @@ public class ScannerUtils {
         System.out.println(mensaje +":" );
         return SCANNER.nextLine();
     }
+
+    public static int capturarNumero(String mensaje){
+        System.out.println(mensaje +":");
+        return SCANNER.nextInt();
+    }
 }
