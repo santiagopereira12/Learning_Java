@@ -12,6 +12,13 @@ public class ScannerUtils {
 
     public static int capturarNumero(String mensaje){
         System.out.println(mensaje +":");
-        return SCANNER.nextInt();
+        while (!SCANNER.hasNextInt()){
+            System.out.println("Dato invalido.\n" +mensaje+":");
+            SCANNER.next();
+        }
+
+        int dato = SCANNER.nextInt();
+        SCANNER.nextLine();
+        return dato;
     }
 }
