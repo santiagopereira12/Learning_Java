@@ -34,7 +34,7 @@ public class Main {
                     System.out.println("Profesor");
                 }
                 case CONSULTAR_LISTA_PROFESORES -> {
-                    System.out.println("Profesores");
+                    System.out.println("profesores");
                 }
                 case ELIMINAR -> {
                     System.out.println("Profesor eliminado");

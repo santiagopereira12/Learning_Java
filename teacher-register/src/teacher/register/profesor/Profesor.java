@@ -2,7 +2,7 @@ package teacher.register.profesor;
 
 public class Profesor {
 
-    public String Profesores(){
+    public String profesores(){
         return null;
     }
 }
