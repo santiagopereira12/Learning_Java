@@ -24,6 +24,21 @@ public class Main {
                     9. Eliminar.
                     0. Salir.
                     """);
+
+            switch (opcion){
+                case AGREGAR_PROFESOR -> {
+                    System.out.println("Se agrego profesor");
+                }
+                case CONSULTAR_PROFESOR -> {
+                    System.out.println("Profesor");
+                }
+                case CONSULTAR_LISTA_PROFESORES -> {
+                    System.out.println("Profesores");
+                }
+                case ELIMINAR -> {
+                    System.out.println("Profesor eliminado");
+                }
+            }
         }while (opcion != SALIR);
     }
 }
