@@ -32,7 +32,14 @@ public class Main {
                     System.out.println("Se agrego profesor "+profesor);
                 }
                 case CONSULTAR_PROFESOR -> {
-                    System.out.println("Profesor");
+                    String consultaProfesor = ScannerUtils.capturarTexto("Digite el numero del profesor");
+                    System.out.println("El nombre ingresado: "+consultaProfesor);
+
+                    if (consultaProfesor == consultaProfesor){
+                        System.out.println("Profesor:");
+                    }else {
+                        System.out.println("profesor no existente");
+                    }
                 }
                 case CONSULTAR_LISTA_PROFESORES -> {
                     System.out.println("profesores");
