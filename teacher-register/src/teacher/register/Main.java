@@ -28,7 +28,8 @@ public class Main {
 
             switch (opcion){
                 case AGREGAR_PROFESOR -> {
-                    System.out.println("Se agrego profesor");
+                    String profesor = ScannerUtils.capturarTexto("Digite el nombre del profesor");
+                    System.out.println("Se agrego profesor "+profesor);
                 }
                 case CONSULTAR_PROFESOR -> {
                     System.out.println("Profesor");
