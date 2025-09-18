@@ -1,5 +1,6 @@
 package teacher.register;
 
+import teacher.register.profesor.Profesor;
 import teacher.register.util.ScannerUtils;
 
 public class Main {
@@ -28,8 +29,10 @@ public class Main {
 
             switch (opcion){
                 case AGREGAR_PROFESOR -> {
-                    String profesor = ScannerUtils.capturarTexto("Digite el nombre del profesor");
-                    System.out.println("Se agrego profesor "+profesor);
+                    String name = ScannerUtils.capturarTexto("Digite el nombre del profesor");
+                    int age = ScannerUtils.capturarNumero("Digite la edad del profesor");
+                    String career = ScannerUtils.capturarTexto("Digete el titulo profesional del profesor");
+                    Profesor.agregarProfesor(name,age,career);
                 }
                 case CONSULTAR_PROFESOR -> {
                     String consultaProfesor = ScannerUtils.capturarTexto("Digite el numero del profesor");

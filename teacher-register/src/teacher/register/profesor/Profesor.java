@@ -1,8 +1,32 @@
 package teacher.register.profesor;
 
-public class Profesor {
+import java.util.ArrayList;
+import java.util.List;
 
-    public String profesores(){
-        return null;
+public class Profesor {
+    private String Nombre;
+    private int edad;
+    private String carrera;
+
+    private static List<Profesor> listaProfesores = new ArrayList<>();
+
+    public Profesor(String nombre, int edad, String carrera){
+        this.Nombre = nombre;
+        this.edad = edad;
+        this.carrera = carrera;
+    }
+
+    public static void agregarProfesor(String nombre, int edad,String carrera){
+        Profesor nuevo = new Profesor(nombre,edad,carrera);
+        listaProfesores.add(nuevo);
+        System.out.println("Profesor agregado correctamente: "+nuevo);
+    }
+
+
+    @Override
+    public String toString (){
+        return "\nNombre: " +Nombre+
+                ".\nEdad: " +edad+
+                ".\nTitulo: " +carrera+".";
     }
 }
