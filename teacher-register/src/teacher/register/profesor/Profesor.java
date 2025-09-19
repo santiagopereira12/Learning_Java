@@ -27,6 +27,17 @@ public class Profesor {
         listaProfesores.add(registro);
     }
 
+    public static void listaProfesores(){
+        if (listaProfesores.isEmpty()){
+            System.out.println("No hay registro de docentes.");
+        }else {
+            System.out.println("Lista de Profesores.");
+            for (int i = 0; i < listaProfesores.size(); i++){
+                System.out.println((i+1)+ ". " +listaProfesores.get(i));
+            }
+        }
+    }
+
 
     @Override
     public String toString (){

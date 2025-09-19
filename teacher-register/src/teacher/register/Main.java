@@ -47,7 +47,7 @@ public class Main {
                     }
                 }
                 case CONSULTAR_LISTA_PROFESORES -> {
-                    System.out.println("profesores");
+                    Profesor.listaProfesores();
                 }
                 case ELIMINAR -> {
                     System.out.println("Profesor eliminado");
