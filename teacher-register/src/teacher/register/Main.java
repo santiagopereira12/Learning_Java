@@ -13,6 +13,8 @@ public class Main {
     public static void main(String[] args) {
         int opcion;
 
+        registroMasivo();
+
         String nombre = ScannerUtils.capturarTexto("Nombre del creador");
         System.out.println("NUEVO PROYECTO DE REGISTRO DE PROFESORES!");
         System.out.println("¡Bienvenido " +nombre+ " nuestro creador!");
@@ -52,5 +54,13 @@ public class Main {
                 }
             }
         }while (opcion != SALIR);
+    }
+
+    private static void registroMasivo(){
+        Profesor.agregarProfesor("Camilo Martinez",25,"Licenciado Matematicas");
+        Profesor.agregarProfesor("Andrés Gómez", 30, "Licenciado en Física");
+        Profesor.agregarProfesor("Mateo Rodríguez", 28, "Ingeniero de Sistemas");
+        Profesor.agregarProfesor("Laura Sánchez", 27, "Licenciada en Lenguas");
+        Profesor.agregarProfesor("Paola Fernández", 29, "Psicóloga Educativa");
     }
 }
