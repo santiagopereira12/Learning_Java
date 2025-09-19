@@ -22,6 +22,11 @@ public class Profesor {
         System.out.println("Profesor agregado correctamente: "+nuevo);
     }
 
+    public static void registroMasivo(String nombre, int edad, String carrera){
+        Profesor registro = new Profesor(nombre, edad, carrera);
+        listaProfesores.add(registro);
+    }
+
 
     @Override
     public String toString (){

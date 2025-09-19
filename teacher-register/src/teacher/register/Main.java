@@ -57,10 +57,10 @@ public class Main {
     }
 
     private static void registroMasivo(){
-        Profesor.agregarProfesor("Camilo Martinez",25,"Licenciado Matematicas");
-        Profesor.agregarProfesor("Andrés Gómez", 30, "Licenciado en Física");
-        Profesor.agregarProfesor("Mateo Rodríguez", 28, "Ingeniero de Sistemas");
-        Profesor.agregarProfesor("Laura Sánchez", 27, "Licenciada en Lenguas");
-        Profesor.agregarProfesor("Paola Fernández", 29, "Psicóloga Educativa");
+        Profesor.registroMasivo("Camilo Martinez",25,"Licenciado Matematicas");
+        Profesor.registroMasivo("Andrés Gómez", 30, "Licenciado en Física");
+        Profesor.registroMasivo("Mateo Rodríguez", 28, "Ingeniero de Sistemas");
+        Profesor.registroMasivo("Laura Sánchez", 27, "Licenciada en Lenguas");
+        Profesor.registroMasivo("Paola Fernández", 29, "Psicóloga Educativa");
     }
 }
