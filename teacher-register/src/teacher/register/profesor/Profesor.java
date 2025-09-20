@@ -1,5 +1,6 @@
 package teacher.register.profesor;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,8 +41,10 @@ public class Profesor {
 
     public static boolean buscarProfesor(String nombreBuscado){
         boolean encontrado = false;
+        String nombreNormalizado = normalizar(nombreBuscado);
         for (Profesor profesor : listaProfesores){
-            if (profesor.Nombre.equalsIgnoreCase(nombreBuscado)){
+            String nombreProfesorNormalizado = normalizar(profesor.Nombre);
+            if (nombreProfesorNormalizado.equals(nombreNormalizado)){
                 System.out.println("Profesor encontrado: "+profesor);
                 encontrado = true;
             }
@@ -51,6 +54,13 @@ public class Profesor {
             System.out.println("No se encontro ningun profesor con ese nombre: " +nombreBuscado+ ".\nIntente nuevamente.");
         }
         return encontrado;
+    }
+
+    private static String normalizar(String texto){
+        if (texto == null) return "";
+        String normalizado = Normalizer.normalize(texto, Normalizer.Form.NFD);
+        normalizado = normalizado.replaceAll("\\p{M}", "");
+        return normalizado.toLowerCase().trim();
     }
 
     @Override
