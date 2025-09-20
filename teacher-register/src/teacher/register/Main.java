@@ -52,6 +52,12 @@ public class Main {
                 case ELIMINAR -> {
                     System.out.println("Profesor eliminado");
                 }
+                case SALIR -> {
+                    System.out.println("Saliendo del sistema...");
+                }
+                default -> {
+                    System.out.println("La opción seleccionada no es valida.");
+                }
             }
         }while (opcion != SALIR);
     }
