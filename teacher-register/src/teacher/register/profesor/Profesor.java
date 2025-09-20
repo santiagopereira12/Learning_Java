@@ -41,8 +41,8 @@ public class Profesor {
 
     @Override
     public String toString (){
-        return "\nNombre: " +Nombre+
-                ".\nEdad: " +edad+
-                ".\nTitulo: " +carrera+".";
+        return "Nombre: " +Nombre+
+                ". | Edad: " +edad+
+                ". | Titulo: " +carrera+".";
     }
 }
