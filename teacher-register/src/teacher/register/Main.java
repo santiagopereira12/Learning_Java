@@ -37,9 +37,12 @@ public class Main {
                     Profesor.agregarProfesor(name,age,career);
                 }
                 case CONSULTAR_PROFESOR -> {
-                    String consultaProfesor = ScannerUtils.capturarTexto("Digite el numero del profesor");
-                    System.out.println("El nombre ingresado: "+consultaProfesor);
-                    Profesor.buscarProfesor(consultaProfesor);
+                    boolean encontrado = false;
+                    while(!encontrado){
+                        String consultaProfesor = ScannerUtils.capturarTexto("Digite el nombre del profesor");
+                        System.out.println("El nombre ingresado: "+consultaProfesor);
+                        encontrado = Profesor.buscarProfesor(consultaProfesor);
+                    }
                 }
                 case CONSULTAR_LISTA_PROFESORES -> {
                     Profesor.listaProfesores();

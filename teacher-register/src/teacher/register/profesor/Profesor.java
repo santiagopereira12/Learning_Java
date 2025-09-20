@@ -38,7 +38,7 @@ public class Profesor {
         }
     }
 
-    public static void buscarProfesor(String nombreBuscado){
+    public static boolean buscarProfesor(String nombreBuscado){
         boolean encontrado = false;
         for (Profesor profesor : listaProfesores){
             if (profesor.Nombre.equalsIgnoreCase(nombreBuscado)){
@@ -48,8 +48,9 @@ public class Profesor {
         }
 
         if (!encontrado){
-            System.out.println("No se encontro ningun profesor con ese nombre. " +nombreBuscado);
+            System.out.println("No se encontro ningun profesor con ese nombre: " +nombreBuscado+ ".\nIntente nuevamente.");
         }
+        return encontrado;
     }
 
     @Override
