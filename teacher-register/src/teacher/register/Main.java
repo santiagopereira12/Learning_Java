@@ -39,12 +39,7 @@ public class Main {
                 case CONSULTAR_PROFESOR -> {
                     String consultaProfesor = ScannerUtils.capturarTexto("Digite el numero del profesor");
                     System.out.println("El nombre ingresado: "+consultaProfesor);
-
-                    if (consultaProfesor == consultaProfesor){
-                        System.out.println("Profesor:");
-                    }else {
-                        System.out.println("profesor no existente");
-                    }
+                    Profesor.buscarProfesor(consultaProfesor);
                 }
                 case CONSULTAR_LISTA_PROFESORES -> {
                     Profesor.listaProfesores();
