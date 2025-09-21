@@ -27,7 +27,7 @@ public class Main {
                     1. Agregar Profesor.
                     2. Consultar profesor.
                     3. Consultar lista de profesores.
-                    4. Consultar Lista de materias.
+                    4. Consultar Lista de Materias.
                     5. Agregar nuevas Materias.
                     9. Eliminar Profesor.
                     0. Salir.
