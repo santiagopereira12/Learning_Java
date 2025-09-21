@@ -56,6 +56,18 @@ public class Profesor {
         return encontrado;
     }
 
+    public static boolean eliminarProfesor(String nombre){
+        String nombreNormalizado = normalizar(nombre);
+        for (Profesor profesor : listaProfesores){
+            if (normalizar(profesor.Nombre).equals(nombreNormalizado)){
+                listaProfesores.remove(profesor);
+                System.out.println("Se elimino al Profesor: " +profesor.Nombre);
+            }
+        }
+        System.out.println("No se encontro ningun profesor con el nombre: " +nombre);
+        return false;
+    }
+
     private static String normalizar(String texto){
         if (texto == null) return "";
         String normalizado = Normalizer.normalize(texto, Normalizer.Form.NFD);

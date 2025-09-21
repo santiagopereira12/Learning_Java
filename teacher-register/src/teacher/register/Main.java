@@ -25,7 +25,7 @@ public class Main {
                     1. Agregar Profesor.
                     2. Consultar profesor.
                     3. Consultar lista de profesores
-                    9. Eliminar.
+                    9. Eliminar Profesor.
                     0. Salir.
                     """);
 
@@ -48,7 +48,8 @@ public class Main {
                     Profesor.listaProfesores();
                 }
                 case ELIMINAR -> {
-                    System.out.println("Profesor eliminado");
+                    String name = ScannerUtils.capturarTexto("Digite el nombre del profesor que desea eliminar");
+                    Profesor.eliminarProfesor(name);
                 }
                 case SALIR -> {
                     System.out.println("Saliendo del sistema...");
