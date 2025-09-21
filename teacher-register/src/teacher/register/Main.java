@@ -51,6 +51,13 @@ public class Main {
                 case CONSULTAR_LISTA_PROFESORES -> {
                     Profesor.listaProfesores();
                 }
+                case CONSULTAR_MATERIAS -> {
+                    System.out.println("Lista de materias");
+                }
+                case AGREGAR_MATERIAS -> {
+                    String materia = ScannerUtils.capturarTexto("Ingrese la materia que desea agregar.");
+                    System.out.println("Materia agregada exitosamente. "+materia);
+                }
                 case ELIMINAR -> {
                     String name = ScannerUtils.capturarTexto("Digite el nombre del profesor que desea eliminar");
                     boolean eliminado = Profesor.eliminarProfesor(name);
