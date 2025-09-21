@@ -49,7 +49,10 @@ public class Main {
                 }
                 case ELIMINAR -> {
                     String name = ScannerUtils.capturarTexto("Digite el nombre del profesor que desea eliminar");
-                    Profesor.eliminarProfesor(name);
+                    boolean eliminado = Profesor.eliminarProfesor(name);
+                    if (!eliminado){
+                        System.out.println("Vuelva intentarlo, no se elimino ningun profesor");
+                    }
                 }
                 case SALIR -> {
                     System.out.println("Saliendo del sistema...");
