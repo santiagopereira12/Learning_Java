@@ -57,15 +57,16 @@ public class Profesor {
     }
 
     public static boolean eliminarProfesor(String nombre){
-        String nombreNormalizado = normalizar(nombre);
-        for (Profesor profesor : listaProfesores){
-            if (normalizar(profesor.Nombre).equals(nombreNormalizado)){
-                listaProfesores.remove(profesor);
-                System.out.println("Se elimino al Profesor: " +profesor.Nombre);
+            String nombreNormalizado = normalizar(nombre);
+            boolean eliminado = listaProfesores.removeIf(
+                    profesor -> normalizar(profesor.Nombre).equals(nombreNormalizado)
+            );
+            if (eliminado){
+                System.out.println("Profesor eliminado correctamente. " +nombre);
+            }else {
+                System.out.println("No se encontro ningun profesor con el nombre: " +nombre);
             }
-        }
-        System.out.println("No se encontro ningun profesor con el nombre: " +nombre);
-        return false;
+            return eliminado;
     }
 
     private static String normalizar(String texto){
