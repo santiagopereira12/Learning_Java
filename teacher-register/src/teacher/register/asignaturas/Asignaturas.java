@@ -1,8 +1,13 @@
 package teacher.register.asignaturas;
 
-public class Asignaturas {
+import java.util.ArrayList;
+import java.util.List;
 
-    public String asignaturas(){
-        return null;
+public class Asignaturas {
+    private String nombre;
+    private List<Asignaturas> listaAsignaturas = new ArrayList<>();
+
+    public Asignaturas(String nombre){
+        this.nombre = nombre;
     }
 }
