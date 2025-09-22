@@ -1,5 +1,6 @@
 package teacher.register;
 
+import teacher.register.asignaturas.Asignaturas;
 import teacher.register.profesor.Profesor;
 import teacher.register.util.ScannerUtils;
 
@@ -55,8 +56,8 @@ public class Main {
                     System.out.println("Lista de materias");
                 }
                 case AGREGAR_MATERIAS -> {
-                    String materia = ScannerUtils.capturarTexto("Ingrese la materia que desea agregar.");
-                    System.out.println("Materia agregada exitosamente. "+materia);
+                    String materia = ScannerUtils.capturarTexto("Ingrese la materia que desea agregar");
+                    Asignaturas.agregarAsignatura(materia);
                 }
                 case ELIMINAR -> {
                     String name = ScannerUtils.capturarTexto("Digite el nombre del profesor que desea eliminar");
