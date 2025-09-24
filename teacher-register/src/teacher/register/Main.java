@@ -51,6 +51,7 @@ public class Main {
                 }
                 case CONSULTAR_LISTA_PROFESORES -> {
                     Profesor.listaProfesores();
+                    System.out.println("Tenemos que realizar la logica para imprimir la lista de profesores");
                 }
                 case CONSULTAR_MATERIAS -> {
                     System.out.println("Lista de materias");
