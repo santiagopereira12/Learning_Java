@@ -17,6 +17,11 @@ public class Asignaturas {
         System.out.println("Asugnatura almacenada: "+nuevo);
     }
 
+    public static void registroMasivo(String materia){
+        Asignaturas registro = new Asignaturas(materia);
+        listaAsignaturas.add(registro);
+    }
+
     @Override
     public String toString(){
         return "\nMateria: " +nombre;
