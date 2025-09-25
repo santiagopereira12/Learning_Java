@@ -17,6 +17,7 @@ public class Main {
         int opcion;
 
         registroMasivo();
+        registroAsignaturas();
 
         String nombre = ScannerUtils.capturarTexto("Nombre del creador");
         System.out.println("NUEVO PROYECTO DE REGISTRO DE PROFESORES!");
@@ -82,5 +83,18 @@ public class Main {
         Profesor.registroMasivo("Mateo Rodríguez", 28, "Ingeniero de Sistemas");
         Profesor.registroMasivo("Laura Sánchez", 27, "Licenciada en Lenguas");
         Profesor.registroMasivo("Paola Fernández", 29, "Psicóloga Educativa");
+    }
+
+    private static void registroAsignaturas(){
+        Asignaturas.registroMasivo("Filosofia");
+        Asignaturas.registroMasivo("Matemáticas");
+        Asignaturas.registroMasivo("Lengua Castellana");
+        Asignaturas.registroMasivo("Historia");
+        Asignaturas.registroMasivo("Biología");
+        Asignaturas.registroMasivo("Química");
+        Asignaturas.registroMasivo("Física");
+        Asignaturas.registroMasivo("Inglés");
+        Asignaturas.registroMasivo("Educación Física");
+        Asignaturas.registroMasivo("Artes");
     }
 }
