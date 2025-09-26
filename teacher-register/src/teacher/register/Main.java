@@ -55,6 +55,7 @@ public class Main {
                 }
                 case CONSULTAR_MATERIAS -> {
                     System.out.println("Lista de materias");
+                    Asignaturas.listaAsignaturas();
                 }
                 case AGREGAR_MATERIAS -> {
                     String materia = ScannerUtils.capturarTexto("Ingrese la materia que desea agregar");
