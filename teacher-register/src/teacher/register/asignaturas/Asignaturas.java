@@ -35,6 +35,6 @@ public class Asignaturas {
 
     @Override
     public String toString(){
-        return "\nMateria: " +nombre;
+        return "Materia: " +nombre;
     }
 }
