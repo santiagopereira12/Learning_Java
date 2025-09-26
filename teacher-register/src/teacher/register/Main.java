@@ -54,7 +54,6 @@ public class Main {
                     Profesor.listaProfesores();
                 }
                 case CONSULTAR_MATERIAS -> {
-                    System.out.println("Lista de materias");
                     Asignaturas.listaAsignaturas();
                 }
                 case AGREGAR_MATERIAS -> {
