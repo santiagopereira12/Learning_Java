@@ -22,6 +22,17 @@ public class Asignaturas {
         listaAsignaturas.add(registro);
     }
 
+    public static void listaAsignaturas(){
+        if (listaAsignaturas.isEmpty()){
+            System.out.println("No existen registros.");
+        }else {
+            System.out.println("Lista de Asignaturas.");
+            for (int i = 0; i < listaAsignaturas.size(); i++){
+                System.out.println((i+1) +". " +listaAsignaturas.get(i));
+            }
+        }
+    }
+
     @Override
     public String toString(){
         return "\nMateria: " +nombre;
