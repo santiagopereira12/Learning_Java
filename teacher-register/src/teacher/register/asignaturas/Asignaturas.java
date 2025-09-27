@@ -12,9 +12,15 @@ public class Asignaturas {
     }
 
     public static void agregarAsignatura(String nombre){
-        Asignaturas nuevo = new Asignaturas(nombre);
-        listaAsignaturas.add(nuevo);
-        System.out.println("Asugnatura almacenada: "+nuevo);
+        boolean exist = listaAsignaturas.stream()
+                .anyMatch(a -> a.nombre.equalsIgnoreCase(nombre));
+        if (exist){
+            System.out.println("La asignatura. " +nombre+ " ya se encuentra registrada");
+        }else {
+            Asignaturas nuevo = new Asignaturas(nombre);
+            listaAsignaturas.add(nuevo);
+            System.out.println("Asugnatura almacenada: "+nuevo);
+        }
     }
 
     public static void registroMasivo(String materia){
