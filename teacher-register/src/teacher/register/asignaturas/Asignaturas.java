@@ -39,6 +39,10 @@ public class Asignaturas {
         }
     }
 
+    public String buscarAsignatura(String nombre){
+        return "Aqui vamos a buscar una sola materia";
+    }
+
     @Override
     public String toString(){
         return "Materia: " +nombre;
