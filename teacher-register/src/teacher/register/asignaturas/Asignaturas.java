@@ -40,8 +40,21 @@ public class Asignaturas {
         }
     }
 
-    public String buscarAsignatura(String nombre){
-        return "Aqui vamos a buscar una sola materia";
+    public static boolean buscarAsignatura(String nombre){
+        boolean encontrado = false;
+        String asignaturaNormalizada = normalizar(nombre);
+        for (Asignaturas asignatura : listaAsignaturas){
+            String nombreAsignaturaNormalizada = normalizar(asignatura.nombre);
+            if (nombreAsignaturaNormalizada.equals(asignaturaNormalizada)){
+                System.out.println("Asignatura encontrada: "+asignatura);
+                encontrado = true;
+            }
+        }
+
+        if (!encontrado){
+            System.out.println("No se encontro ninguna Asignatura por este nombre: "+nombre+ "\nIntente nuevamente.");
+        }
+        return encontrado;
     }
 
     private static String normalizar(String texto){
