@@ -1,5 +1,6 @@
 package teacher.register.asignaturas;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,13 @@ public class Asignaturas {
 
     public String buscarAsignatura(String nombre){
         return "Aqui vamos a buscar una sola materia";
+    }
+
+    private static String normalizar(String texto){
+        if (texto == null) return "";
+        String normalizado = Normalizer.normalize(texto, Normalizer.Form.NFD);
+        normalizado = normalizado.replaceAll("\\p{M}", "");
+        return normalizado.toLowerCase().trim();
     }
 
     @Override
