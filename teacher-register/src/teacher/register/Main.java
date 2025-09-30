@@ -10,7 +10,7 @@ public class Main {
     public static final int CONSULTAR_LISTA_PROFESORES = 3;
     public static final int CONSULTAR_MATERIAS = 4;
     public static final int AGREGAR_MATERIAS = 5;
-    public static final int ELIMINAR = 9;
+    public static final int ELIMINAR = 8;
     public static final int SALIR = 0;
 
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class Main {
                     3. Consultar lista de profesores.
                     4. Consultar Lista de Materias.
                     5. Agregar nuevas Materias.
-                    9. Eliminar Profesor.
+                    8. Eliminar Profesor.
                     0. Salir.
                     """);
 
