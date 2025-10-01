@@ -79,7 +79,11 @@ public class Main {
                     }
                 }
                 case ELIMINAR_MATERIA -> {
-                    System.out.println("Se limino la materia.");
+                    String materia = ScannerUtils.capturarTexto("Digite el nombre de la Asignatura que desea eliminar");
+                    boolean eliminado = Asignaturas.eliminarMateria(materia);
+                    if (!eliminado){
+                        System.out.println("Vuelva intentarlo, no se elimino ninguna Asignatura.");
+                    }
                 }
                 case SALIR -> {
                     System.out.println("Saliendo del sistema...");
