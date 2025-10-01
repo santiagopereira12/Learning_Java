@@ -12,6 +12,7 @@ public class Main {
     public static final int AGREGAR_MATERIAS = 5;
     public static final int BUSCAR_MATERIA = 6;
     public static final int ELIMINAR = 8;
+    public static final int ELIMINAR_MATERIA = 9;
     public static final int SALIR = 0;
 
     public static void main(String[] args) {
@@ -76,6 +77,9 @@ public class Main {
                     if (!eliminado){
                         System.out.println("Vuelva intentarlo, no se elimino ningun profesor");
                     }
+                }
+                case ELIMINAR_MATERIA -> {
+                    System.out.println("Se limino la materia.");
                 }
                 case SALIR -> {
                     System.out.println("Saliendo del sistema...");
