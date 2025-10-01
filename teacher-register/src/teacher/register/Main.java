@@ -10,6 +10,7 @@ public class Main {
     public static final int CONSULTAR_LISTA_PROFESORES = 3;
     public static final int CONSULTAR_MATERIAS = 4;
     public static final int AGREGAR_MATERIAS = 5;
+    public static final int BUSCAR_MATERIA = 6;
     public static final int ELIMINAR = 8;
     public static final int SALIR = 0;
 
@@ -31,6 +32,7 @@ public class Main {
                     3. Consultar lista de profesores.
                     4. Consultar Lista de Materias.
                     5. Agregar nuevas Materias.
+                    6. Buscar Materia.
                     8. Eliminar Profesor.
                     0. Salir.
                     """);
@@ -59,6 +61,14 @@ public class Main {
                 case AGREGAR_MATERIAS -> {
                     String materia = ScannerUtils.capturarTexto("Ingrese la materia que desea agregar");
                     Asignaturas.agregarAsignatura(materia);
+                }
+                case BUSCAR_MATERIA -> {
+                    boolean encontrado = false;
+                    while(!encontrado){
+                        String consultarAsignatura = ScannerUtils.capturarTexto("Digite el nombre de la asignatura que desea eliminar");
+                        System.out.println("La asignatura buscada fue: "+consultarAsignatura);
+                        encontrado = Asignaturas.buscarAsignatura(consultarAsignatura);
+                    }
                 }
                 case ELIMINAR -> {
                     String name = ScannerUtils.capturarTexto("Digite el nombre del profesor que desea eliminar");
