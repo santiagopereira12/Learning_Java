@@ -57,6 +57,19 @@ public class Asignaturas {
         return encontrado;
     }
 
+    public static boolean eliminarMateria(String materia){
+        String materiaNormalizada = normalizar(materia);
+        boolean eliminado = listaAsignaturas.removeIf(
+                asignaturas -> normalizar(asignaturas.nombre).equals(materiaNormalizada)
+        );
+        if (eliminado){
+            System.out.println("Asignatura eliminada correctamente: " +materia);
+        }else {
+            System.out.println("No se encontro ninguna asignatura con el nombre: " +materia);
+        }
+        return eliminado;
+    }
+
     private static String normalizar(String texto){
         if (texto == null) return "";
         String normalizado = Normalizer.normalize(texto, Normalizer.Form.NFD);
