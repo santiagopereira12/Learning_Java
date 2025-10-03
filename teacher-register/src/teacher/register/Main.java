@@ -35,6 +35,7 @@ public class Main {
                     5. Agregar nuevas Materias.
                     6. Buscar Materia.
                     8. Eliminar Profesor.
+                    9. Eliminar Materias.
                     0. Salir.
                     """);
 
