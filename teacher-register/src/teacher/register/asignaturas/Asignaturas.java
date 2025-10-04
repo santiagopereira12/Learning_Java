@@ -81,4 +81,8 @@ public class Asignaturas {
     public String toString(){
         return "Materia: " +nombre;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
 }
