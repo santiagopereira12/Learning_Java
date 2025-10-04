@@ -11,4 +11,9 @@ public class Asignacion {
     private Asignaturas asignaturas;
 
     private static List<Asignacion> listaAsignacion = new ArrayList<>();
+
+    public Asignacion(Profesor profesor, Asignaturas asignaturas){
+        this.profesor = profesor;
+        this.asignaturas = asignaturas;
+    }
 }
