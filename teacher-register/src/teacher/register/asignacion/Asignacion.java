@@ -1,8 +1,14 @@
 package teacher.register.asignacion;
 
-public class Asignacion {
+import teacher.register.asignaturas.Asignaturas;
+import teacher.register.profesor.Profesor;
 
-    public String Asignar(){
-        return "Aqui se can asignar los profesores a las diferentes mateiras.";
-    }
+import java.util.ArrayList;
+import java.util.List;
+
+public class Asignacion {
+    private Profesor profesor;
+    private Asignaturas asignaturas;
+
+    private static List<Asignacion> listaAsignacion = new ArrayList<>();
 }
