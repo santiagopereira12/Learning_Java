@@ -82,4 +82,8 @@ public class Profesor {
                 ". | Edad: " +edad+
                 ". | Titulo: " +carrera+".";
     }
+
+    public String getCarrera() {
+        return carrera;
+    }
 }
