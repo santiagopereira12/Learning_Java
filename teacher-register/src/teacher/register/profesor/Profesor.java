@@ -86,4 +86,8 @@ public class Profesor {
     public String getCarrera() {
         return carrera;
     }
+
+    public String getNombre() {
+        return Nombre;
+    }
 }
