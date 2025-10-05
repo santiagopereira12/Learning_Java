@@ -86,7 +86,7 @@ public class Asignaturas {
         return nombre;
     }
 
-    public List<Asignaturas> getListaAsignaturas(){
+    public static List<Asignaturas> getListaAsignaturas(){
         return  listaAsignaturas;
     }
 }
