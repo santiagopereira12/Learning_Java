@@ -85,4 +85,8 @@ public class Asignaturas {
     public String getNombre() {
         return nombre;
     }
+
+    public List<Asignaturas> getListaAsignaturas(){
+        return  listaAsignaturas;
+    }
 }
