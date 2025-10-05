@@ -90,4 +90,8 @@ public class Profesor {
     public String getNombre() {
         return Nombre;
     }
+
+    public List<Profesor> getListaProfesores(){
+        return listaProfesores;
+    }
 }
