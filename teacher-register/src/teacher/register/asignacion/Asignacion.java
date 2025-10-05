@@ -44,4 +44,16 @@ public class Asignacion {
             }
         }
     }
+
+    public static void mostrarAsignacion(){
+        if (listaAsignacion.isEmpty()){
+            System.out.println("No existe asignación registrada");
+        }else {
+            System.out.println("Lista de asignación");
+            for (int i = 0; i < listaAsignacion.size(); i++){
+                Asignacion asignacion = listaAsignacion.get(i);
+                System.out.println((i+1)+ ". " +asignacion.profesor.getNombre() + " imparte " +asignacion.asignaturas.getNombre());
+            }
+        }
+    }
 }
