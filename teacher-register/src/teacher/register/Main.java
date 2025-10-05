@@ -5,6 +5,8 @@ import teacher.register.asignaturas.Asignaturas;
 import teacher.register.profesor.Profesor;
 import teacher.register.util.ScannerUtils;
 
+import java.util.List;
+
 public class Main {
     public static final int AGREGAR_PROFESOR = 1;
     public static final int CONSULTAR_PROFESOR = 2;
@@ -19,9 +21,10 @@ public class Main {
 
     public static void main(String[] args) {
         int opcion;
+        List<Profesor> profesores = registroMasivo();
+        List<Asignaturas> materias = registroAsignaturas();
 
-        registroMasivo();
-        registroAsignaturas();
+        Asignacion.asignacionAutomatica(profesores, materias);
 
         String nombre = ScannerUtils.capturarTexto("Nombre del creador");
         System.out.println("NUEVO PROYECTO DE REGISTRO DE PROFESORES!");
@@ -102,15 +105,16 @@ public class Main {
         }while (opcion != SALIR);
     }
 
-    private static void registroMasivo(){
+    private static List<Profesor> registroMasivo(){
         Profesor.registroMasivo("Camilo Martinez",25,"Licenciado Matematicas");
         Profesor.registroMasivo("Andrés Gómez", 30, "Licenciado en Física");
         Profesor.registroMasivo("Mateo Rodríguez", 28, "Ingeniero de Sistemas");
         Profesor.registroMasivo("Laura Sánchez", 27, "Licenciada en Lenguas");
         Profesor.registroMasivo("Paola Fernández", 29, "Psicóloga Educativa");
+        return Profesor.getListaProfesores();
     }
 
-    private static void registroAsignaturas(){
+    private static List<Asignaturas> registroAsignaturas(){
         Asignaturas.registroMasivo("Filosofia");
         Asignaturas.registroMasivo("Matemáticas");
         Asignaturas.registroMasivo("Lengua Castellana");
@@ -121,5 +125,6 @@ public class Main {
         Asignaturas.registroMasivo("Inglés");
         Asignaturas.registroMasivo("Educación Física");
         Asignaturas.registroMasivo("Artes");
+        return Asignaturas.getListaAsignaturas();
     }
 }
