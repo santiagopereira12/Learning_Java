@@ -1,5 +1,6 @@
 package teacher.register;
 
+import teacher.register.asignacion.Asignacion;
 import teacher.register.asignaturas.Asignaturas;
 import teacher.register.profesor.Profesor;
 import teacher.register.util.ScannerUtils;
@@ -11,6 +12,7 @@ public class Main {
     public static final int CONSULTAR_MATERIAS = 4;
     public static final int AGREGAR_MATERIAS = 5;
     public static final int BUSCAR_MATERIA = 6;
+    public static final int ASIGNACION = 7;
     public static final int ELIMINAR = 8;
     public static final int ELIMINAR_MATERIA = 9;
     public static final int SALIR = 0;
@@ -34,6 +36,7 @@ public class Main {
                     4. Consultar Lista de Materias.
                     5. Agregar nuevas Materias.
                     6. Buscar Materia.
+                    7. Mostrar Asignación.
                     8. Eliminar Profesor.
                     9. Eliminar Materias.
                     0. Salir.
@@ -71,6 +74,9 @@ public class Main {
                         System.out.println("La asignatura buscada fue: "+consultarAsignatura);
                         encontrado = Asignaturas.buscarAsignatura(consultarAsignatura);
                     }
+                }
+                case ASIGNACION -> {
+                    Asignacion.mostrarAsignacion();
                 }
                 case ELIMINAR -> {
                     String name = ScannerUtils.capturarTexto("Digite el nombre del profesor que desea eliminar");
