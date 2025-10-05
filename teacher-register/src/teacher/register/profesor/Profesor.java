@@ -91,7 +91,7 @@ public class Profesor {
         return Nombre;
     }
 
-    public List<Profesor> getListaProfesores(){
+    public static List<Profesor> getListaProfesores(){
         return listaProfesores;
     }
 }
