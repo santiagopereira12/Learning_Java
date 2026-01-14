@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository {
-    private final List<User> users = new ArrayList<>();
+    private static final List<User> users = new ArrayList<>();
 
     public void save(User user){
         users.add(user);
@@ -15,5 +15,9 @@ public class UserRepository {
 
     public List<User> getUsers() {
         return users;
+    }
+
+    public void massRegistration(User user){
+        users.add(user);
     }
 }
