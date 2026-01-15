@@ -21,7 +21,8 @@ public class Main {
         int age = ScannerUtil.capturarNumero("Enter age");
         int doc = ScannerUtil.capturarNumero("Enter document number");
         User user = new User(name, age, doc);
-        registerService.createUser(user);
+        User create = registerService.createUser(user);
+        System.out.println("Usuario Creado:" +create);
 /*
         //Crear la cuenta.
         int number = ScannerUtil.capturarNumero("Enter the account number");

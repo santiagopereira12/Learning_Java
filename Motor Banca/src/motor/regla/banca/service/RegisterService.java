@@ -20,7 +20,8 @@ public class RegisterService {
         System.out.println("Usuarios Cargados");
     }
 
-    public void createUser(User user){
+    public User createUser(User user){
         userRepository.save(user);
+        return user;
     }
 }

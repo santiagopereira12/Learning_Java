@@ -10,7 +10,6 @@ public class UserRepository {
 
     public void save(User user){
         users.add(user);
-        System.out.println("Usuario Agregado "+users);
     }
 
     public List<User> getUsers() {
