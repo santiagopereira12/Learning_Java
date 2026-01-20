@@ -24,4 +24,13 @@ public class RegisterService {
         userRepository.save(user);
         return user;
     }
+
+    public User login(int document){
+        User user = userRepository.findByDocument(document);
+
+        if (user == null){
+            throw new IllegalArgumentException("User not Found");
+        }
+        return user;
+    }
 }

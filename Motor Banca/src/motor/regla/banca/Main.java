@@ -40,7 +40,13 @@ public class Main {
                 }
                 case LOGIN -> {
                     int numDoc = ScannerUtil.capturarNumero("Enter your Number Document");
-                    System.out.println("User Login");
+
+                    try{
+                        User loggedUser = registerService.login(numDoc);
+                        System.out.println("Welcome " +loggedUser.getName());
+                    }catch (IllegalArgumentException e){
+                        System.out.println("User not Found");
+                    }
                 }
                 case LOGOUT -> {
                     System.out.println("Leaving the system");

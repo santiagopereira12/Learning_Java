@@ -19,4 +19,13 @@ public class UserRepository {
     public void massRegistration(User user){
         users.add(user);
     }
+
+    public User findByDocument(int document){
+        for (User user : users){
+            if (user.getDocument() == document){
+                return user;
+            }
+        }
+        return null;
+    }
 }
