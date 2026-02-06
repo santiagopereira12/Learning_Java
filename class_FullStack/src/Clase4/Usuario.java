@@ -6,13 +6,20 @@ public class Usuario {
     private String email;
     private boolean activo;
 
-    public Usuario(Long id, String nombre, String email) {
+    public Usuario(Long id, String nombre, String email, boolean activo) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
+        this.activo = activo;
     }
 
-    public boolean activar(){}
-    public boolean desactivar(){}
-    public String mostrarInfo(){}
+    public boolean activar(){
+        return this.activo = true;
+    }
+    public boolean desactivar(){
+        return this.activo = false;
+    }
+    public String mostrarInfo(){
+        return "Id: "+id+"\nNombre: "+nombre+"\nEmail: "+email+"\nEstado: "+activo;
+    }
 }
