@@ -1,12 +1,12 @@
 package Clase4;
 
 public class Usuario {
-    private Long id;
+    private int id;
     private String nombre;
     private String email;
     private boolean activo;
 
-    public Usuario(Long id, String nombre, String email, boolean activo) {
+    public Usuario(int id, String nombre, String email, boolean activo) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
@@ -21,5 +21,13 @@ public class Usuario {
     }
     public String mostrarInfo(){
         return "Id: "+id+"\nNombre: "+nombre+"\nEmail: "+email+"\nEstado: "+activo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

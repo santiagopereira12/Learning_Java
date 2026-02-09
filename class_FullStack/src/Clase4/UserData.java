@@ -1,12 +1,19 @@
 package Clase4;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserData {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Usuario user1 = new Usuario(1001L,"Santiago","santiago@prueba.com",true);
-        Usuario user2 = new Usuario(102L,"Cristian","cristian@prueba.com",false);
+        List<Usuario> usuarios = new ArrayList<>();
+        usuarios.add(new Usuario(101,"Santiago","santiago@prueba.com",true));
+        usuarios.add(new Usuario(102,"Cristian","cristian@prueba.com",true));
+        usuarios.add(new Usuario(103,"Emmanuel","emmanuel@prueba.com",true));
+        usuarios.add(new Usuario(104,"Sebastian","sebastian@prueba.com",true));
+        usuarios.add(new Usuario(105,"Camilo","camilo@prueba.com",true));
+
         int opc;
         String activate;
 
@@ -18,49 +25,67 @@ public class UserData {
                     3. Mostrar info del usuario.
                     4. Salir.
                     """);
-            opc = sc.nextInt();
-            sc.nextLine();
+
+            try {
+                opc = sc.nextInt();
+                sc.nextLine();
+            }catch (Exception e){
+                System.out.println("Entrada invalida");
+                sc.nextLine();
+                continue;
+            }
 
             switch (opc){
                 case 1:
-                    System.out.println("Digite el Nombre del usuario que desea Activar.(SANTIAGO/CRISTIAN)");
-                    activate = sc.nextLine().trim().toUpperCase();
-                    if (activate.equals("SANTIAGO")){
-                        user1.activar();
-                        System.out.println("Usuario activado");
-                        user1.mostrarInfo();
-                    } else if (activate.equals("CRISTIAN")) {
-                        user2.activar();
-                        System.out.println("Usuario activado");
-                        user2.mostrarInfo();
-                    }else {
-                        System.out.println("Usuario Invalido");
+                    System.out.println("Digite el ID del usuario que desea activar");
+                    try {
+                        int idActivar = sc.nextInt();
+                        sc.nextLine();
+                        Usuario user = buscarUsuarioId(usuarios, idActivar);
+                        if (user != null){
+                            user.activar();
+                            System.out.println("Usuario Activado.");
+                            System.out.println(user.mostrarInfo());
+                        }else {
+                            System.out.print("Usuario invalido.");
+                        }
+                    }catch (Exception e){
+                        System.out.println("ID invalido");
+                        sc.nextLine();
                     }
                     break;
                 case 2:
-                    System.out.println("Digite el Nombre del usuario que desea Desactivar.(SANTIAGO/CRISTIAN)");
-                    activate = sc.nextLine().trim().toUpperCase();
-                    if (activate.equals("SANTIAGO")){
-                        user1.desactivar();
-                        System.out.println("Usuario desactivado");
-                        System.out.println(user1.mostrarInfo());
-                    } else if (activate.equals("CRISTIAN")) {
-                        user2.desactivar();
-                        System.out.println("Usuario desactivado");
-                        System.out.println(user2.mostrarInfo());
-                    }else {
-                        System.out.println("Usuario Invalido");
+                    System.out.println("Digitar el ID del Usario que desea desactivar");
+                    try {
+                        int idDesactivar = sc.nextInt();
+                        sc.nextLine();
+                        Usuario user = buscarUsuarioId(usuarios, idDesactivar);
+                        if (user != null){
+                            user.desactivar();
+                            System.out.println("USUARIO DESACTIVATO");
+                            System.out.println(user.mostrarInfo());
+                        }
+                    }catch (Exception e){
+                        System.out.println("ID invalido: "+e);
+                        sc.nextLine();
                     }
                     break;
                 case 3:
-                    System.out.println("Digite el Nombre del usuario que desea validar información.(SANTIAGO/CRISTIAN)");
-                    activate = sc.nextLine().trim().toUpperCase();
-                    if (activate.equals("SANTIAGO")){
-                        System.out.println(user1.mostrarInfo());
-                    } else if (activate.equals("CRISTIAN")) {
-                        System.out.println(user2.mostrarInfo());
-                    }else {
-                        System.out.println("Usuario invalido.");
+                    System.out.println("Digite el ID del usuario que desea revisar la información");
+                    try{
+                        int idBuscar = sc.nextInt();
+                        sc.nextLine();
+
+                        Usuario user = buscarUsuarioId(usuarios, idBuscar);
+                        if (user != null){
+                            System.out.println("------//- INFORMACIÓN DE USUARIO "+user.getNombre().toUpperCase()+" -//--------");
+                            System.out.println(user.mostrarInfo());
+                        }else {
+                            System.out.println("Id no corresponde.");
+                        }
+                    }catch (Exception e){
+                        System.out.println("ID INVALIDO "+e);
+                        sc.nextLine();
                     }
                     break;
                 case 4:
@@ -70,5 +95,14 @@ public class UserData {
                     System.out.println("dato invalido.");
             }
         }while (opc != 4);
+    }
+
+    private static Usuario buscarUsuarioId(List<Usuario> user, int id){
+        for (Usuario u : user){
+            if (u.getId() == id){
+                return u;
+            }
+        }
+        return null;
     }
 }
