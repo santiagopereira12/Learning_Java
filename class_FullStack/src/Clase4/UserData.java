@@ -14,7 +14,7 @@ public class UserData {
         usuarios.add(new Usuario(104,"Sebastian","sebastian@prueba.com",true));
         usuarios.add(new Usuario(105,"Camilo","camilo@prueba.com",true));
 
-        int opc;
+        int opc = 0;
         String activate;
 
         do {
