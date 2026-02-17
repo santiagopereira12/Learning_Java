@@ -23,7 +23,8 @@ public class UserData {
                     1. Activar usuario.
                     2. Desactivar Usuario.
                     3. Mostrar info del usuario.
-                    4. Salir.
+                    4. Buscar ultimo Id.
+                    5. Salir.
                     """);
 
             try {
@@ -89,12 +90,18 @@ public class UserData {
                     }
                     break;
                 case 4:
+                    int ultimoId = buscarUltimoId(usuarios);
+                    if (ultimoId != 1){
+                        System.out.println("Ultimo Id: "+ultimoId);
+                    }
+                    break;
+                case 5:
                     System.out.println("Saliendo del sistema.");
                     break;
                 default:
                     System.out.println("dato invalido.");
             }
-        }while (opc != 4);
+        }while (opc != 5);
     }
 
     private static Usuario buscarUsuarioId(List<Usuario> user, int id){
@@ -104,5 +111,12 @@ public class UserData {
             }
         }
         return null;
+    }
+
+    private static int buscarUltimoId(List<Usuario> user){
+        if (user.isEmpty()){
+            return -1;
+        }
+        return user.get(user.size()-1).getId();
     }
 }

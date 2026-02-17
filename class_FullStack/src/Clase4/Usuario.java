@@ -13,11 +13,11 @@ public class Usuario {
         this.activo = activo;
     }
 
-    public boolean activar(){
-        return this.activo = true;
+    public void activar(){
+        this.activo = true;
     }
-    public boolean desactivar(){
-        return this.activo = false;
+    public void desactivar(){
+        this.activo = false;
     }
     public String mostrarInfo(){
         return "Id: "+id+"\nNombre: "+nombre+"\nEmail: "+email+"\nEstado: "+activo;
