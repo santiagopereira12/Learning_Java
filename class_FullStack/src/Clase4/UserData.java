@@ -20,10 +20,10 @@ public class UserData {
         do {
             System.out.println("""
                     Escoger Opción a realizar.
-                    1. Activar usuario.
-                    2. Desactivar Usuario.
-                    3. Mostrar info del usuario.
-                    4. Buscar ultimo Id.
+                    1. Crear usuario.
+                    2. Activar Usuario.
+                    3. Desactivar Usuario.
+                    4. Mostrar info del usuario.
                     5. Salir.
                     """);
 
@@ -38,6 +38,26 @@ public class UserData {
 
             switch (opc){
                 case 1:
+                    try {
+                        int idUsuario = buscarUltimoId(usuarios);
+                        Usuario user = buscarUsuarioId(usuarios, idUsuario);
+                        if (user != null){
+                            System.out.println("Usuario Existente");
+                        }else {
+                            System.out.print("Creación de Usuario");
+                            int id = buscarUltimoId(usuarios) + 1;
+                            System.out.println("Digite el nombre del usuario: ");
+                            String name = sc.nextLine();
+                            System.out.println("Digite el Email del usuario: ");
+                            String emailNew = sc.nextLine();
+                            usuarios.add(new Usuario(id,name,emailNew,true));
+                        }
+                    }catch (Exception e){
+                        System.out.println("ID invalido");
+                        sc.nextLine();
+                    }
+                    break;
+                case 2:
                     System.out.println("Digite el ID del usuario que desea activar");
                     try {
                         int idActivar = sc.nextInt();
@@ -55,7 +75,7 @@ public class UserData {
                         sc.nextLine();
                     }
                     break;
-                case 2:
+                case 3:
                     System.out.println("Digitar el ID del Usario que desea desactivar");
                     try {
                         int idDesactivar = sc.nextInt();
@@ -71,7 +91,7 @@ public class UserData {
                         sc.nextLine();
                     }
                     break;
-                case 3:
+                case 4:
                     System.out.println("Digite el ID del usuario que desea revisar la información");
                     try{
                         int idBuscar = sc.nextInt();
@@ -87,12 +107,6 @@ public class UserData {
                     }catch (Exception e){
                         System.out.println("ID INVALIDO "+e);
                         sc.nextLine();
-                    }
-                    break;
-                case 4:
-                    int ultimoId = buscarUltimoId(usuarios);
-                    if (ultimoId != 1){
-                        System.out.println("Ultimo Id: "+ultimoId);
                     }
                     break;
                 case 5:
