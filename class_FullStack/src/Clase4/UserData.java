@@ -21,10 +21,11 @@ public class UserData {
             System.out.println("""
                     Escoger Opción a realizar.
                     1. Crear usuario.
-                    2. Activar Usuario.
-                    3. Desactivar Usuario.
-                    4. Mostrar info del usuario.
-                    5. Salir.
+                    2. Listar Usuarios
+                    3. Activar Usuario.
+                    4. Desactivar Usuario.
+                    5. Mostrar info del usuario.
+                    6. Salir.
                     """);
 
             try {
@@ -58,6 +59,9 @@ public class UserData {
                     }
                     break;
                 case 2:
+                    System.out.println(listarUsuario(usuarios));
+                    break;
+                case 3:
                     System.out.println("Digite el ID del usuario que desea activar");
                     try {
                         int idActivar = sc.nextInt();
@@ -75,7 +79,7 @@ public class UserData {
                         sc.nextLine();
                     }
                     break;
-                case 3:
+                case 4:
                     System.out.println("Digitar el ID del Usario que desea desactivar");
                     try {
                         int idDesactivar = sc.nextInt();
@@ -91,7 +95,7 @@ public class UserData {
                         sc.nextLine();
                     }
                     break;
-                case 4:
+                case 5:
                     System.out.println("Digite el ID del usuario que desea revisar la información");
                     try{
                         int idBuscar = sc.nextInt();
@@ -109,13 +113,13 @@ public class UserData {
                         sc.nextLine();
                     }
                     break;
-                case 5:
+                case 6:
                     System.out.println("Saliendo del sistema.");
                     break;
                 default:
                     System.out.println("dato invalido.");
             }
-        }while (opc != 5);
+        }while (opc != 6);
     }
 
     private static Usuario buscarUsuarioId(List<Usuario> user, int id){
