@@ -133,4 +133,17 @@ public class UserData {
         }
         return user.get(user.size()-1).getId();
     }
+
+    private static String listarUsuario(List<Usuario> user){
+        if (user.isEmpty()){
+            System.out.println("Lista vacia");
+        }
+
+        String lista = "";
+
+        for (Usuario u : user){
+            lista += u.getNombre()+"\n";
+        }
+        return lista;
+    }
 }
