@@ -25,7 +25,8 @@ public class UserData {
                     3. Activar Usuario.
                     4. Desactivar Usuario.
                     5. Mostrar info del usuario.
-                    6. Salir.
+                    6. Eliminar Usuario.
+                    7. Salir.
                     """);
 
             try {
@@ -114,12 +115,29 @@ public class UserData {
                     }
                     break;
                 case 6:
+                    System.out.println("Digite munero ID del usuario");
+                    try{
+                        int idEliminar = sc.nextInt();
+                        sc.nextLine();
+
+                        Usuario user = buscarUsuarioId(usuarios, idEliminar);
+                        if (user != null){
+                            System.out.println(user.mostrarInfo());
+                            usuarios.remove(user);
+                            System.out.println("Usuario Eliminado. "+user.getNombre());
+                        }
+                    }catch (Exception e){
+                        System.out.println("Id invalido "+e);
+                        sc.nextLine();
+                    }
+                    break;
+                case 7:
                     System.out.println("Saliendo del sistema.");
                     break;
                 default:
                     System.out.println("dato invalido.");
             }
-        }while (opc != 6);
+        }while (opc != 7);
     }
 
     private static Usuario buscarUsuarioId(List<Usuario> user, int id){
