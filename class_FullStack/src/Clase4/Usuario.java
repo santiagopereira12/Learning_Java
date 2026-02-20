@@ -30,4 +30,8 @@ public class Usuario {
     public String getNombre() {
         return nombre;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

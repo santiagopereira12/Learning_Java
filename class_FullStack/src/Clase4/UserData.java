@@ -26,7 +26,8 @@ public class UserData {
                     4. Desactivar Usuario.
                     5. Mostrar info del usuario.
                     6. Eliminar Usuario.
-                    7. Salir.
+                    7. Editar Email.
+                    8. Salir.
                     """);
 
             try {
@@ -132,12 +133,30 @@ public class UserData {
                     }
                     break;
                 case 7:
+                    System.out.println("Ingresar el Id del usuario que desea editar.");
+                    try{
+                        int idActualizar = sc.nextInt();
+                        sc.nextLine();
+
+                        Usuario user = buscarUsuarioId(usuarios,idActualizar);
+                        if (user != null){
+                            System.out.println("Ingrese el nuevo Email: ");
+                            String nuevoEmail = sc.nextLine();
+                            user.setEmail(nuevoEmail);
+                        }else {
+                            System.out.println("Usuario no encontrado.");
+                        }
+                    }catch (Exception e){
+                        System.out.println("Id invalido. "+e);
+                    }
+                    break;
+                case 8:
                     System.out.println("Saliendo del sistema.");
                     break;
                 default:
                     System.out.println("dato invalido.");
             }
-        }while (opc != 7);
+        }while (opc != 8);
     }
 
     private static Usuario buscarUsuarioId(List<Usuario> user, int id){
